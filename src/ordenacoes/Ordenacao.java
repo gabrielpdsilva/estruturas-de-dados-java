@@ -21,6 +21,24 @@ public abstract class Ordenacao {
 		}
 		return vetor;
 	}
+	
+	// ======================SelectionSort======================
+	
+	public static int[] selectionSort(int[] vetor){  
+		int tamanhoVetor = vetor.length;
+        for (int i = 0; i < tamanhoVetor - 1; i++) {
+            int indice = i;  
+            for (int j = i + 1; j < tamanhoVetor; j++){  
+                if (vetor[j] < vetor[indice]){  
+                    indice = j; // procurando o menor indice 
+                }  
+            }  
+            int menorNumero = vetor[indice];   
+            vetor[indice] = vetor[i];  
+            vetor[i] = menorNumero;  
+        }
+        return vetor;
+    }  
 
 	// ======================QuickSort======================
 	
